@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>AppDeGatos</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  </head>
+<body>
+  <h2 id="titulo">AppDeGatos</h2>
+  <main>
+<h3>Imágenes de gatos:</h3>
+
+<!--el <a> lleva a un párrafo a una página url y la url va en href=, si queremos que se abra otra pestaña es importante poner target= y dentro _blank -->
+  <!--rel="noopener noreferrer" nos defiende de un tipo de ataque-->
+  <p>Haz click aqui para ver más <a href="https://www.pexels.com/es-es/buscar/gatos/" target="_blank" rel="noopener noreferrer">imágenes de gatos.</a></p>
+  <div class="contenedor-listas">
+ 
+  <a><img src="https://bit.ly/fcc-relaxing-cat" class="bordesredondeados" alt="Un lindo gato naranja recostado sobre su espalda"></a>
+  
+<!--pone una linea -->
+   <hr>
+   <h3>Listas de gatos</h3>
+
+   <div class="contenedor-listas">
+   <p>Cosas que los gatos <em>aman:</em></p>
+  <ul id="lista-gatos-aman">
+    <li>Menta gatuna</li>
+    <li>Apuntadores Láser</li>
+    <!--para tachar una palabra se aplica <s>-->
+    <li><s>Lasaña</s></li>
+  </ul>
+  <img src="./images/descarga.jpg" alt="lasaña">
+
+<!--para poner en negrita se usa <strong> y para cursiva <em>-->
+  <p>Cosas que los gatos <strong>odian:</strong></p>
+  <ol id="lista-gatos-odian">
+    <li>Tratamiento anti pulgas</li>
+    <li>Truenos</li>
+    <li>Otro gatos</li>
+  </ol>
+</div>
+
+<img id="images-cats" src="./images/Gatos-domesticos.jpg">
+
+<!--crear un formulario
+input type="text" te pide un texto
+button type="submit">enviar</button> crear un boton con la palabra enviar
+el primer parrafo es para enviar la respuesta a una bds.
+required obliga a contestar.
+type="radio" es para seleccionar por opcion multiple
+<label> sirve para seleccionar la opcion con solo tocar la letra
+  name="interior-exterior" sirve para que solo una opcion se marque 
+checked sirve para marcar automaticamente una respuesta+
+<value ="sirve para que el servidor pueda distinguir el tipo de dato que le pasan"
+  -->
+<form action="/enviar-respuesta">
+<!--botones de radio-->
+
+ <label for="Interior"> <input id="Interior" type="radio" value="interior" name="Interior-Exterior" checked>Interior</label>
+ <br><!--romper o separar elementos-->
+ <label for="Exterior"><input id="Exterior" type="radio" value="exterior" name="Interior-Exterior" >Exterior</label>
+<br>
+<!--casillas de verificación -->
+<label for="carinoso"><input id="carinoso" type="checkbox" value="carinoso" name="personalidad" checked>Cariñoso</label>
+<br>
+<label for="perezoso"><input id="perezoso" type="checkbox" value="perezoso" name="personalidad">Perezoso</label>
+<br>
+<label for="energico"><input id="energico" type="checkbox" value="energico" name="personalidad">Enérgico</label>
+<br>
+<!--texto y botón enviar-->
+<input type="text" placeholder="URL de la foto de tu gato" required>
+<br>
+<button type="submit">Enviar</button>
+    </form>
+  
+   </main>
+   <!--pie de página-->
+<footer>
+  <p><small>Derechos de autor <a href="https://www.freeCodecamp.org/espanol/">freeCodeCamp.org</a></small> </p>
+</footer>
+  </body>
+</html>
