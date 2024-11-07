@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="demosexto" defaultIdMethod="native">
+
+<table name="datos" phpName="Datos">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" phpName="IdDatos" />
+    <column name="correo" type="varchar" size="100" required="true" phpName="Correo"/>
+    <column name="contrasena" type="varchar" size="50"  required="true" phpName="Contrasena"/>
+    <column name="nombres" type="varchar" size="200"  required="true" phpName="Nombres"/>
+</table>
+<table name="estudiantes" phpName="Estudiantes">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" phpName="IdEstudiantes" />
+    <column name="matricula" type="varchar" size="10" required="true" phpName="Matricula"/>
+    <column name="carrera" type="enum" valueSet="bio,adm,inf,ige,agr"  required="true" phpName="Carrera"/>
+    <column name="nombres" type="varchar" size="200"  required="true" phpName="Nombres"/>
+    <column name="apellidos" type="varchar" size="200"  required="true" phpName="Apellidos"/>
+    <validator column="nombres">
+        <rule name="required" message="Debes de poner tu nombre"/>
+    </validator>
+    <validator column="apellidos">
+        <rule name="required" message="Debes de poner tu apellido"/>
+    </validator>
+
+
+</table>
+
+<table name="carreras" phpName="Carreras">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" phpName="IdCarreras" />
+    <column name="carreras" type="enum" valueSet="bio,adm,inf,ige,agr" required="true" phpName="Carreras"/>
+    <column name="semestres" type="varchar" size="50"  required="true" phpName="Semestres"/>
+    <column name="clave" type="varchar" size="100"  required="true" phpName="ClaveCarreras"/>
+
+</table>
+
+</database>
